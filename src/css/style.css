@@ -1,0 +1,24 @@
+.nav-link {
+	color: #fff;
+	margin: 2rem 0;
+	display: flex;
+	padding: 5px;
+	transition: all 0.3s ease-in;
+}
+
+.arrow-right {
+	color: transparent;
+	transition: color 0.3s ease-in;
+}
+
+.nav-link.activated,
+.nav-link:hover {
+	background-color: white;
+	color: #051942;
+	border-radius: 4px;
+}
+
+.nav-link.activated .arrow-right,
+.nav-link:hover .arrow-right {
+	color: #051942;
+}

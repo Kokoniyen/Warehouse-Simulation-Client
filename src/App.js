@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import DefaultLayout from './layout/DefaultLayout';
+import BasicInfo from './views/pages/BasicInfo';
+import Area from './views/pages/Area';
+import Pallets from './views/pages/Pallets';
+import RiskMap from './views/pages/RiskMap';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	return (
+		<Router>
+			<Routes>
+				<Route path='/' element={<DefaultLayout />}>
+					<Route index element={<BasicInfo />} />
+					<Route path='basic-info' element={<BasicInfo />} />
+					<Route path='area' element={<Area />} />
+					<Route path='pallets' element={<Pallets />} />
+					<Route path='risk-map' element={<RiskMap />} />
+				</Route>
+			</Routes>
+		</Router>
+	);
+};
 
 export default App;
