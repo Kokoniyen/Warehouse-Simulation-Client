@@ -11,7 +11,7 @@ const AppSidebar = () => {
 	const tabs = [
 		{ link: '/' },
 		{ link: '/area' },
-		{ link: '/pallets' },
+		{ link: '/entry-exit' },
 		{ link: '/risk-map' },
 	];
 
@@ -48,11 +48,11 @@ const AppSidebar = () => {
 					}
 				>
 					<ArrowNarrowRightIcon className='w-5 mr-2 arrow-right' />{' '}
-					<span>Area</span>
+					<span>Inputs</span>
 				</NavLink>
 				<NavLink
 					onClick={() => setCurrentTab(2)}
-					to='/pallets'
+					to='/entry-exit'
 					className={({ isActive }) =>
 						'nav-link' + (isActive ? ' activated' : '')
 					}

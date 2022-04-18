@@ -22,3 +22,35 @@
 .nav-link:hover .arrow-right {
 	color: #051942;
 }
+
+/* Cuboid Styles */
+.cuboid {
+	width: 200px;
+	height: 200px;
+	margin: 50px 20px;
+	background-color: #ccc;
+	position: relative;
+	/* display: inline-block; */
+}
+
+.cuboid-rt:before {
+	content: '';
+	height: 200px;
+	width: 20px;
+	background-color: #adacac;
+	position: absolute;
+	left: 100%;
+	top: calc(-20px / 2);
+	transform: skew(0, -45deg);
+}
+
+.cuboid-rt:after {
+	content: '';
+	width: 200px;
+	height: 20px;
+	background-color: #999797;
+	position: absolute;
+	top: -20px;
+	left: calc(20px / 2);
+	transform: skew(-45deg);
+}
