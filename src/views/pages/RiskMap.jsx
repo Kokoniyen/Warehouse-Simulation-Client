@@ -16,6 +16,7 @@ const RiskMap = () => {
 	} = useInfoContext();
 	const [loading, setLoading] = useState(false);
 	const [result, setResult] = useState(null);
+	const [disabled, setDisabled] = useState(false);
 
 	const fields = {
 		length: 'Length',
@@ -56,6 +57,7 @@ const RiskMap = () => {
 			setResult(res);
 			console.log(res);
 			setLoading(false);
+			setDisabled(true);
 		} catch (error) {
 			console.log(error);
 			setLoading(false);
@@ -70,8 +72,11 @@ const RiskMap = () => {
 		<div>
 			<div className='w-full flex justify-center'>
 				<button
+					disabled={disabled}
 					onClick={() => fetchData()}
-					className='rounded-md py-2 px-4 bg-[#0b6799] text-white cursor-pointer mb-5'
+					className={`rounded-md py-2 px-4 bg-[#0b6799] text-white mb-5 ${
+						disabled ? 'cursor-not-allowed opacity-70' : 'cursor-pointer'
+					}`}
 				>
 					Generate Risk Map
 				</button>
