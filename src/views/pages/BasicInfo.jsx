@@ -1,4 +1,5 @@
 import Input from '../../components/Input';
+import { useInfoContext } from '../../contexts/InfoContext';
 
 const BasicInfo = () => {
 	return (

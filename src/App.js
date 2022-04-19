@@ -9,26 +9,29 @@ import Windows from './components/Windows';
 import Pallets from './components/Pallets';
 import Vents from './components/Vents';
 import { LocationGridContextProvider } from './contexts/LocationGridContext';
+import { InfoContextProvider } from './contexts/InfoContext';
 
 const App = () => {
 	return (
 		<Router>
 			<LocationGridContextProvider>
-				<Routes>
-					<Route path='/' element={<DefaultLayout />}>
-						<Route index element={<BasicInfo />} />
-						<Route path='basic-info' element={<BasicInfo />} />
-						<Route path='area' element={<Area />} />
-						<Route path='entry-exit' element={<EntryExit />}>
-							<Route index element={<Doors />} />
-							<Route path='doors' element={<Doors />} />
-							<Route path='windows' element={<Windows />} />
-							<Route path='pallets' element={<Pallets />} />
-							<Route path='vents' element={<Vents />} />
+				<InfoContextProvider>
+					<Routes>
+						<Route path='/' element={<DefaultLayout />}>
+							<Route index element={<BasicInfo />} />
+							<Route path='basic-info' element={<BasicInfo />} />
+							<Route path='area' element={<Area />} />
+							<Route path='entry-exit' element={<EntryExit />}>
+								<Route index element={<Doors />} />
+								<Route path='doors' element={<Doors />} />
+								<Route path='windows' element={<Windows />} />
+								<Route path='pallets' element={<Pallets />} />
+								<Route path='vents' element={<Vents />} />
+							</Route>
+							<Route path='risk-map' element={<RiskMap />} />
 						</Route>
-						<Route path='risk-map' element={<RiskMap />} />
-					</Route>
-				</Routes>
+					</Routes>
+				</InfoContextProvider>
 			</LocationGridContextProvider>
 		</Router>
 	);

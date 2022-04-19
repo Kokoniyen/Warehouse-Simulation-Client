@@ -1,18 +1,29 @@
 import { useEffect, useState } from 'react';
+import { useInfoContext } from '../../contexts/InfoContext';
 import { useLocationGridContext } from '../../contexts/LocationGridContext';
 
 const RiskMap = () => {
 	const { selected } = useLocationGridContext();
+	const {
+		info: {
+			length,
+			width,
+			height,
+			initialTemp,
+			heatConductivity,
+			numberOfHours,
+		},
+	} = useInfoContext();
 	const [loading, setLoading] = useState(false);
 	const [result, setResult] = useState(null);
 
 	const data = {
-		heat_conductivity: 2,
-		initial_temperature: 2,
-		length: 2,
-		breadth: 2,
-		height: 2,
-		number_of_hours: 2,
+		heat_conductivity: heatConductivity,
+		initial_temperature: initialTemp,
+		length,
+		breadth: width,
+		height,
+		number_of_hours: numberOfHours,
 	};
 
 	const fetchData = async () => {
@@ -74,9 +85,7 @@ const RiskMap = () => {
 				{loading && (
 					<div className='ml-5'>
 						<h3 className='mb-4'>Risk Map</h3>
-						<div className='w-[400px] h-[400px] bg-yellow-600'>
-							Loading...
-						</div>
+						<div className='w-[400px] h-[400px] bg-yellow-600'>Loading...</div>
 					</div>
 				)}
 
