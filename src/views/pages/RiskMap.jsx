@@ -17,6 +17,15 @@ const RiskMap = () => {
 	const [loading, setLoading] = useState(false);
 	const [result, setResult] = useState(null);
 
+	const fields = {
+		heat_conductivity: 'Length',
+		initial_temperature: 'Width',
+		length: 'Height',
+		breadth: 'Initial Temperature',
+		height: 'Heat Conductivity',
+		number_of_hours: 'Number of Hours',
+	};
+
 	const data = {
 		heat_conductivity: heatConductivity,
 		initial_temperature: initialTemp,
@@ -27,6 +36,12 @@ const RiskMap = () => {
 	};
 
 	const fetchData = async () => {
+		for (let key in data) {
+			if (!data[key]) {
+				window.alert(`${fields[key]} is required`);
+				return;
+			}
+		}
 		setLoading(true);
 		try {
 			const response = await fetch('http://localhost:5000/api/v1/img_path', {
