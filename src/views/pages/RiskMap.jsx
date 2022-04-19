@@ -18,26 +18,26 @@ const RiskMap = () => {
 	const [result, setResult] = useState(null);
 
 	const fields = {
-		heat_conductivity: 'Length',
-		initial_temperature: 'Width',
-		length: 'Height',
-		breadth: 'Initial Temperature',
-		height: 'Heat Conductivity',
+		length: 'Length',
+		breadth: 'Width',
+		height: 'Height',
+		initial_temperature: 'Initial Temperature',
+		heat_conductivity: 'Heat Conductivity',
 		number_of_hours: 'Number of Hours',
 	};
 
 	const data = {
-		heat_conductivity: heatConductivity,
-		initial_temperature: initialTemp,
 		length,
 		breadth: width,
 		height,
+		initial_temperature: initialTemp,
+		heat_conductivity: heatConductivity,
 		number_of_hours: numberOfHours,
 	};
 
 	const fetchData = async () => {
 		for (let key in data) {
-			if (!data[key]) {
+			if (!data[key].length) {
 				window.alert(`${fields[key]} is required`);
 				return;
 			}
