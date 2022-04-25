@@ -84,13 +84,13 @@ const RiskMap = () => {
 			<div className='flex justify-between'>
 				<div className='w-full'>
 					<h3 className='mb-4'>Warehouse Map</h3>
-					<div className='grid grid-cols-10 h-[400px]'>
+					<div className='grid grid-cols-10 h-[400px] border-[0.5px] border-black'>
 						{Array(100)
 							.fill(undefined)
 							.map((el, i) => {
 								return (
 									<div
-										className={`border flex items-center justify-center cursor-pointer text-sm ${
+										className={`border-[0.5px] border-black flex items-center justify-center cursor-pointer text-sm ${
 											selected[i] && `bg-[${selected[i].bgColor}] text-white`
 										}`}
 										key={i}

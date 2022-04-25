@@ -45,14 +45,14 @@ const LocationGrid = () => {
 	};
 
 	return (
-		<div className='grid grid-cols-10 w-[500px] h-[500px] mx-auto'>
+		<div className='grid grid-cols-10 w-[500px] h-[500px] mx-auto border-[0.5px] border-black'>
 			{Array(100)
 				.fill(undefined)
 				.map((el, i) => {
 					return (
 						<div
 							onClick={() => handleBoxClick(i)}
-							className={`border border-black flex items-center justify-center cursor-pointer text-sm ${
+							className={`border-[0.5px] border-black flex items-center justify-center cursor-pointer text-sm ${
 								selected[i] && `bg-[${selected[i].bgColor}] text-white`
 							}`}
 							key={i}

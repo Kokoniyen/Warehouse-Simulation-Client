@@ -11,9 +11,15 @@ export const InfoContextProvider = ({ children }) => {
 		heatConductivity: '',
 		numberOfHours: '',
 	});
+	const [basicInfo, setBasicInfo] = useState({
+		warehouseName: '',
+		location: '',
+		email: '',
+		phone: '',
+	});
 
 	return (
-		<InfoContext.Provider value={{ info, setInfo }}>
+		<InfoContext.Provider value={{ info, setInfo, basicInfo, setBasicInfo }}>
 			{children}
 		</InfoContext.Provider>
 	);
