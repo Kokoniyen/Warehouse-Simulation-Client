@@ -49,10 +49,10 @@ const RiskMap = () => {
 		.filter((el) => el.tab === 'vents')
 		.map((el) => el.number);
 
-	console.log(doorsLocation);
-	console.log(windowsLocation);
-	console.log(palletsLocation);
-	console.log(ventsLocation);
+	console.log('Doors', doorsLocation);
+	console.log('Windows', windowsLocation);
+	console.log('Pallets', palletsLocation);
+	console.log('Vents', ventsLocation);
 
 	const fetchData = async () => {
 		for (let key in data) {

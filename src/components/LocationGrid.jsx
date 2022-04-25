@@ -12,18 +12,6 @@ const LocationGrid = () => {
 		vents: '#648DE5',
 	};
 
-	const [grids, setGrids] = useState({
-		doors: [],
-		windows: [],
-		pallets: [],
-		vents: [],
-	});
-
-	const setTabBackground = (box) => {
-		const exists = selected.find((el) => el.number === box);
-		if (!exists) return;
-	};
-
 	const handleBoxClick = (box) => {
 		const selectedClone = { ...selected };
 		const exists = selected[`${box}`];
@@ -43,8 +31,6 @@ const LocationGrid = () => {
 
 		setSelected(selectedClone);
 	};
-
-	console.log(selected);
 
 	return (
 		<div className='grid grid-cols-10 w-[500px] h-[500px] mx-auto border-[0.5px] border-black'>
