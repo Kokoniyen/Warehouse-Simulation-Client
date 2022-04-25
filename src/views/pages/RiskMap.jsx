@@ -36,6 +36,24 @@ const RiskMap = () => {
 		number_of_hours: numberOfHours,
 	};
 
+	const doorsLocation = Object.values(selected)
+		.filter((el) => el.tab === 'doors')
+		.map((el) => el.number);
+	const windowsLocation = Object.values(selected)
+		.filter((el) => el.tab === 'windows')
+		.map((el) => el.number);
+	const palletsLocation = Object.values(selected)
+		.filter((el) => el.tab === 'pallets')
+		.map((el) => el.number);
+	const ventsLocation = Object.values(selected)
+		.filter((el) => el.tab === 'vents')
+		.map((el) => el.number);
+
+	console.log(doorsLocation);
+	console.log(windowsLocation);
+	console.log(palletsLocation);
+	console.log(ventsLocation);
+
 	const fetchData = async () => {
 		for (let key in data) {
 			if (!data[key].length) {

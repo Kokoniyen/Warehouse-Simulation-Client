@@ -1,4 +1,3 @@
-import Cuboid from '../../components/Cuboid';
 import Input from '../../components/Input';
 import cuboid from '../../assets/images/cuboid.jpeg';
 import { useInfoContext } from '../../contexts/InfoContext';
@@ -9,7 +8,6 @@ const Area = () => {
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setInfo({ ...info, [name]: value });
-		console.log(info)
 	};
 
 	return (

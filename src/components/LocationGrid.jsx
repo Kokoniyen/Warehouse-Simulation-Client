@@ -44,6 +44,8 @@ const LocationGrid = () => {
 		setSelected(selectedClone);
 	};
 
+	console.log(selected);
+
 	return (
 		<div className='grid grid-cols-10 w-[500px] h-[500px] mx-auto border-[0.5px] border-black'>
 			{Array(100)
